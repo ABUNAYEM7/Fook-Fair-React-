@@ -25,24 +25,25 @@ const ReadList = () => {
 
   // sort-rating-handler
   const sortHandler = (sorType) => {
-    setSort(sorType);
-
-    if (sort === "rating") {
+    if (sorType === "rating") {
       const sortedByRating = [...book].sort((a, b) => b.rating - a.rating);
       setBook(sortedByRating);
       setIsOpen(false);
-    } else if (sort === "totalPages") {
+      setSort(sorType);
+    } else if (sorType === "totalPages") {
       const sortedByRating = [...book].sort(
         (a, b) => b.totalPages - a.totalPages
       );
       setBook(sortedByRating);
       setIsOpen(false);
-    } else if (sort === "date") {
+      setSort(sorType);
+    } else if (sorType === "date") {
       const sortedByRating = [...book].sort(
         (a, b) => a.yearOfPublishing - b.yearOfPublishing
       );
       setBook(sortedByRating);
       setIsOpen(false);
+      setSort(sorType);
     }
   };
 
