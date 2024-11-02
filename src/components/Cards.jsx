@@ -5,16 +5,16 @@ import { Link } from "react-router-dom";
 const Cards = ({ book }) => {
   return (
     <Link to={`Cards/${book.bookId}`}>
-    <div className="card hover:scale-105 duration-300 shadow-xl  hover:outline-green-500 hover:outline-double px-6 max-w-80">
+    <div className="card hover:scale-105 duration-300 shadow-xl  hover:outline-green-500 hover:outline-double px-6 w-96 h-[510px]">
       <figure className="px-4 pt-4">
         <img
           src={book.image}
-          className="rounded-xl h-80 w-full object-fit"
+          className="rounded-xl h-64 "
         />
       </figure>
       <div className="card-body p-4">
         <div className="flex items-center gap-4">
-            {book.tags.map((tag,index)=><span key={index} className="p-2 px-6  bg-green-200 text-green-700 rounded-2xl ">{tag}</span> )}
+            {book.tags.map((tag,index)=><span key={index} className="p-2 bg-green-200 text-green-700 rounded-2xl ">{tag}</span> )}
         </div>
         <h2 className="card-title">{book.bookName}</h2>
         <p className="text-xl font-medium">By : {book.author}</p>
